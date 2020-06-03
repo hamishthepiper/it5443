@@ -6,6 +6,7 @@ Notes:
   2: text-transform: will alter written text to upper/lower/etc format
 */
 
+/* Navbar */
 
 /* Add a black background color to the top navigation */
 .navbar {
@@ -34,3 +35,28 @@ Notes:
     background-color: darkblue ;
     color: white;
   }
+  
+  /* Keeps navbar buttons the same color after they've been visited */
+  .navbar a:visited {
+    color: #f2f2f2
+  }
+
+/* Body */
+body{
+  background-color: #404040;
+  color: lightgrey;
+  font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/*Formatting link colors for dark background. https://www.w3schools.com/css/css_link.asp */
+a {
+  color: #426ef0;
+  text-shadow: black;
+}
+a:visited{
+  color: #ff80ff;
+}
+
+.footer {
+  font-size: small;
+}

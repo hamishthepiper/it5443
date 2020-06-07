@@ -6,6 +6,27 @@ Notes:
   2: text-transform: will alter written text to upper/lower/etc format
 */
 
+/* GENERAL STYLE TEMPLATES */
+
+/*Formatting link colors for dark background. https://www.w3schools.com/css/css_link.asp */
+a {
+  color: #426ef0;
+  text-shadow: black;
+}
+a:visited{
+  color: #ff80ff;
+}
+
+/* Body */
+body{
+  background-color: #404040;
+  color: lightgrey;
+  font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+
+/* SPECIFIC ELEMENT STYLES */
+
 /* Navbar */
 
 /* Add a black background color to the top navigation */
@@ -26,8 +47,7 @@ Notes:
   
   /* Change the color of links on hover */
   .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    border-bottom: 2px solid whitesmoke;
   }
   
   /* Add a color to the active/current link */
@@ -35,27 +55,28 @@ Notes:
     background-color: darkblue ;
     color: white;
   }
-  
-  /* Keeps navbar buttons the same color after they've been visited */
-  .navbar a:visited {
-    color: #f2f2f2
-  }
 
-/* Body */
-body{
-  background-color: #404040;
-  color: lightgrey;
-  font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+/* Header */
+.header-wrapper {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-title {
+  flex: 2;
+  text-justify: center;
+  color: white;
+ 
+}
+.header-logo {
+  flex: 1;
+  align-self: flex-end;
 }
 
-/*Formatting link colors for dark background. https://www.w3schools.com/css/css_link.asp */
-a {
-  color: #426ef0;
-  text-shadow: black;
-}
-a:visited{
-  color: #ff80ff;
-}
+
+
+
 
 .footer {
   font-size: small;

@@ -24,6 +24,27 @@ body{
   font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+.section-title {
+  text-align: center;
+  font-size: x-large;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.p1 {
+  font-size: larger;
+  padding: 2em 1em;
+}
+
+.p2 {
+  font-size: medium;
+
+}
+
+img {
+  max-width: 100%;
+}
+
 .container {
   padding: 5%;
 }
@@ -33,8 +54,6 @@ body{
 }
 
 /* SPECIFIC ELEMENT STYLES */
-
-
 
 /* Header */
 .header-wrapper {
@@ -46,10 +65,10 @@ body{
 
 /* Navbar */
 
-/* Add a black background color to the top navigation */
 .navbar {
   background-color: #333;
   overflow: hidden;
+  display: flex;
 }
 
 /* Style the links inside the navigation bar */
@@ -59,7 +78,7 @@ body{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: medium;
 }
 
 /* Change the color of links on hover */
@@ -74,12 +93,14 @@ body{
   font-weight: bold;
 }
 .header-title {
+  display: flex;
   flex: 2;
   text-align: center;
   color: white;
  
 }
 .header-logo {
+  display: flex;
   flex: 1;
   align-self: flex-end;
   height: 40px;
@@ -91,6 +112,15 @@ body{
 
 .profile-wrapper {
   display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 6%;
+}
+
+.profile-main {
+  display: flex;
   padding: 40px;
   justify-content: space-around;
   background: linear-gradient(90deg, rgba(254,237,65,1) 0%, rgba(2,0,36,0) 40%);
@@ -99,14 +129,14 @@ body{
   border-top-right-radius: 10% 30%;
 }
 
-img.profile-pic {
+.profile-pic {
   flex: 1;
-  height: fit-content;
+  /*max-width: 100%; /*Used to keep picture size responsive */
 }
 
 .profile-text {
-  flex: 3;
+  flex: 2;
   font-size: medium;
-  padding: 25px;
+  padding: 2em;
 }
 

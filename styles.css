@@ -10,23 +10,28 @@ Notes:
   --main-text: #FFE400;
   --accent-red: #FF652F;
   --accent-green: #14A76C;
+  --accent-grey: lightgray;
 }
 
 
 /* GENERAL STYLE TEMPLATES */
 
 a {
-    color: #426ef0;
+    color: rgb(159, 191, 250);
     text-shadow: black;
 }
-a:visited{
+/* a:visited{
     color: #ff80ff;
-}
+} */
 
 /* Body */
 body{
     background-color: var(--main-bg);
     font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+div {
+    color: var(--main-text);
 }
 
 .body-wrapper{
@@ -47,20 +52,23 @@ body{
     padding: 2em 1em;
     background-color: var(--main-box-bg);
     color: var(--main-text);
-    border: 2px black solid;
+    border: 2px var(--accent-grey) solid;
 
 }
 
 
 .p2 {
     font-size: medium;
-    color: var(--accent-red);
+    padding: 2em 1em;
+    background-color: var(--main-box-bg);
+    border: 2px var(--accent-grey) solid;
 }
 
 img {
     max-width: 100%;
 }
 
+/* Footer formatting */
 .footer {
     font-size: small;
     text-align: center;
@@ -69,6 +77,10 @@ img {
 
 .footer > div {
     font-size: medium;
+}
+
+.footer a {
+    color: var(--main-text);
 }
 
 /* SPECIFIC ELEMENT STYLES */
@@ -128,6 +140,12 @@ img {
     width: 150px;
 }
 
+/* List formatting */
+
+li span {
+    font-weight: bolder;
+    color: var(--accent-red);
+}
 
 /* About page */
 

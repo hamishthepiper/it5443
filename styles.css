@@ -140,7 +140,6 @@ img {
     font-size: x-large;
     overflow-y: visible;
     margin: auto;
-    text-decoration: underline;
 }
 .header-logo {
     display: flex;

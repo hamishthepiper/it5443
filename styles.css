@@ -211,12 +211,12 @@ td, th {
     border: 1px solid var(--accent-red);
     padding: 0.25rem;
     text-align: center;
-    width: 5em;
+    width: 6em;
 }
 
-tbody td {
+tbody tr td {
     text-align: left;
-    height: 4em;
+    height: 6em;
     vertical-align: top;
 }
 

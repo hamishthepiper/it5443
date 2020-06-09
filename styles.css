@@ -2,141 +2,166 @@
 /* 
 Notes:
   1: .class > sub_class > div { Selects all divs from that class and applies these styles}
-
-  2: text-transform: will alter written text to upper/lower/etc format
+  2: Defining color variables in root. http://stackoverflow.com/questions/1875852/ddg#17595596
 */
+:root {
+  --main-bg: #272727;
+  --main-box-bg: #747474;
+  --main-text: #FFE400;
+  --accent-red: #FF652F;
+  --accent-green: #14A76C;
+}
+
 
 /* GENERAL STYLE TEMPLATES */
 
-/*Formatting link colors for dark background. https://www.w3schools.com/css/css_link.asp */
 a {
-  color: #426ef0;
-  text-shadow: black;
+    color: #426ef0;
+    text-shadow: black;
 }
 a:visited{
-  color: #ff80ff;
+    color: #ff80ff;
 }
 
 /* Body */
 body{
-  background-color: #404040;
-  color: lightgrey;
-  font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: var(--main-bg);
+    font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.body-wrapper{
+    padding: 0em 2em 0em 2em;
 }
 
 .section-title {
-  text-align: center;
-  font-size: x-large;
-  text-decoration: underline;
-  text-transform: capitalize;
+    text-align: left;
+    padding-left: 1em;
+    font-size: x-large;
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: var(--main-text);
 }
 
 .p1 {
-  font-size: larger;
-  padding: 2em 1em;
+    font-size: larger;
+    padding: 2em 1em;
+    background-color: var(--main-box-bg);
+    color: var(--main-text);
+    border: 2px black solid;
+
 }
 
-.p2 {
-  font-size: medium;
 
+.p2 {
+    font-size: medium;
+    color: var(--accent-red);
 }
 
 img {
-  max-width: 100%;
-}
-
-.container {
-  padding: 5%;
+    max-width: 100%;
 }
 
 .footer {
-  font-size: small;
+    font-size: small;
+    text-align: center;
+    color: var(--main-text);
+}
+
+.footer > div {
+    font-size: medium;
 }
 
 /* SPECIFIC ELEMENT STYLES */
 
 /* Header */
 .header-wrapper {
-  background-color:  #333;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    background-color:  #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    color: lightgray;
 }
 
 /* Navbar */
 
 .navbar {
-  background-color: #333;
-  overflow: hidden;
-  display: flex;
+    background-color: #333;
+    display: flex;
+    align-self: center;
 }
 
 /* Style the links inside the navigation bar */
 .navbar a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: medium;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: medium;
 }
 
 /* Change the color of links on hover */
 .navbar a:hover {
-  border-bottom: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
 }
 
 /* Add a color to the active/current link */
 .navbar a.active {
-  /*background-color: darkblue ;*/
-  color: gold;
-  font-weight: bold;
+    /*background-color: darkblue ;*/
+    color: var(--main-text);
+    font-weight: bold;
 }
 .header-title {
-  display: flex;
-  flex: 2;
-  text-align: center;
-  color: white;
- 
+    display: flex;
+    flex: 2;
+    justify-content: space-evenly;
+    color: white;
+    font-size: x-large;
+    overflow-y: visible;
+    margin: auto;
 }
 .header-logo {
-  display: flex;
-  flex: 1;
-  align-self: flex-end;
-  height: 40px;
-  padding-right: 20px;
+    display: flex;
+    flex: 1;
+    padding-right: 20px;
+    width: 150px;
 }
 
 
 /* About page */
 
 .profile-wrapper {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: space-around;
-  gap: 40px;
-  padding: 6%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 2em;
 }
 
 .profile-main {
-  display: flex;
-  padding: 40px;
-  justify-content: space-around;
-  background: linear-gradient(90deg, rgba(254,237,65,1) 0%, rgba(2,0,36,0) 40%);
-  border: 4px solid rgba(254,237,65,1);
-  border-radius: 1em;
-  border-top-right-radius: 10% 30%;
+    display: flex;
+    padding: 40px;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(254,237,65,1) 0%, rgba(2,0,36,0) 40%);
+    border: 4px solid rgba(254,237,65,1);
+    border-radius: 1em;
+    border-top-right-radius: 10% 30%;
 }
 
 .profile-pic {
-  flex: 1;
-  /*max-width: 100%; /*Used to keep picture size responsive */
+     flex: 1;
+    /*max-width: 100%; /*Used to keep picture size responsive */
 }
 
 .profile-text {
-  flex: 2;
-  font-size: medium;
-  padding: 2em;
+    flex: 2;
+    font-size: medium;
+    padding: 2em;
+    color: var(--main-text);
 }
+
+
+/* Resources Page */
 

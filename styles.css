@@ -140,6 +140,10 @@ img {
     padding: 2em;
 }
 
+.profile-wrapper > .section-title {
+    align-self: flex-start;
+}
+
 .profile-main {
     display: flex;
     padding: 40px;

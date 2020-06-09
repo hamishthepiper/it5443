@@ -32,6 +32,7 @@ body{
 
 div {
     color: var(--main-text);
+    margin: 1.25em;
 }
 
 .body-wrapper{
@@ -54,21 +55,18 @@ div {
     color: var(--main-text);
 }
 
-.p1 {
-    font-size: larger;
+.p2, .p1 {
     padding: 2em 1em;
     background-color: var(--main-box-bg);
-    color: var(--main-text);
     border: 2px var(--accent-grey) solid;
-
 }
 
+.p1 {
+    font-size: larger;
+}
 
 .p2 {
     font-size: medium;
-    padding: 2em 1em;
-    background-color: var(--main-box-bg);
-    border: 2px var(--accent-grey) solid;
 }
 
 img {
@@ -87,9 +85,9 @@ img {
     font-size: medium;
 }
 
-.footer a {
+/* .footer a {
     color: var(--main-text);
-}
+} */
 
 /* SPECIFIC ELEMENT STYLES */
 
@@ -168,7 +166,8 @@ li span {
 }
 
 .profile-wrapper > .section-title {
-    align-self: flex-start;
+    align-self: center;
+    margin-bottom: -1.5em;
 }
 
 .profile-main {

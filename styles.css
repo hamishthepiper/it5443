@@ -32,7 +32,7 @@ body{
 
 div {
     color: var(--main-text);
-    margin: 1.25em;
+    margin: 1.25em 0em 1.25em 0em;
 }
 
 .body-wrapper{
@@ -56,7 +56,7 @@ div {
 }
 
 .p2, .p1 {
-    padding: 2em 1em;
+    padding: 1em;
     background-color: var(--main-box-bg);
     border: 2px var(--accent-grey) solid;
 }
@@ -162,11 +162,12 @@ li span {
     align-items: center;
     justify-content: space-around;
     gap: 40px;
+    margin: 0em 1.5em 0em 1.5em;
 }
 
 .profile-wrapper > .section-title {
     align-self: center;
-    margin-bottom: -1.5em;
+    margin: -1em 0em -2.2em 0em;
 }
 
 .profile-main {

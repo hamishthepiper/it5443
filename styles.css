@@ -80,6 +80,7 @@ img {
     font-size: small;
     text-align: center;
     color: var(--main-text);
+    padding-bottom: 1em;
 }
 
 .footer > div {
@@ -196,20 +197,31 @@ li span {
 /* Table formatting */
 
 table {
-    display: flex;
     padding: 1em 0em 1em 0em;
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
 }
 
-th td {
+thead {
+    font-weight: bold;
+    margin: auto;
+}
+
+td, th {
     background-color: var(--main-box-bg);
     color: var(--accent-red);
     border: 1px solid var(--accent-red);
+    padding: 0.25rem;
     text-align: center;
-    padding: 1em;
+    width: 5em;
+}
+
+tbody td {
+    text-align: left;
+    height: 4em;
+    vertical-align: top;
 }
 
 td:hover {
-    background-color: var(--main-box-bg) 10%;
+    background-color: var(--accent-green);
 }

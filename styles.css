@@ -130,6 +130,7 @@ img {
     /*background-color: darkblue ;*/
     color: var(--main-text);
     font-weight: bold;
+    border-bottom: 2px solid whitesmoke;
 }
 .header-title {
     display: flex;

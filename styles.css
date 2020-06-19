@@ -8,8 +8,8 @@ Notes:
   --main-bg: #272727;
   --main-box-bg: #747474;
   --main-text: #FFE400;
-  --accent-red: #FD2020;
-  --accent-green: #14A76C;
+  --accent-red: #fd2020c4;
+  --accent-green: #14a720;
   --accent-grey: lightgray;
 }
 
@@ -71,6 +71,16 @@ div {
 
 img {
     max-width: 100%;
+}
+
+span.red {
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+span.green {
+    color: var(--accent-green);
+    font-weight: bold;
 }
 
 /* Footer formatting */
@@ -225,7 +235,16 @@ td:hover {
     background-color: var(--accent-green);
 }
 
-/* TODO: Style buttons */
+/* Apply formatting */
+
+div.class {
+    height: 1.5em;
+}
+
+button, select {
+    background-color: var(--main-text);
+
+}
 select.grade {
     float: right;
 }

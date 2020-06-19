@@ -95,27 +95,32 @@ jstep163@students.kennesaw.edu
         </div>
 
         <script type="text/javascript">
+
+            // generates different form based on schooling selection and writes to 'application' div innerHTML
             function createApplication() {
                 var level = document.getElementById("schooling").value;
 
                 if (level == "Undergraduate") {
-                    var html=`<p class="class">CSE 3203 Mobile System Overview <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">IT 4213 Mobile Web Development <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">CYBR 3153 Database Systems <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">CYBR 4220 Server Systems Security <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">IT 4713 Business Intel Systems <select id="Class5" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+= `<br><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button>`
+                    var html=`<div class="class">CSE 3203 Mobile System Overview <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">IT 4213 Mobile Web Development <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">CYBR 3153 Database Systems <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">CYBR 4220 Server Systems Security <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">IT 4713 Business Intel Systems <select id="Class5" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+= `<div>Please note, the requirement for ${level}s is <em>above a 3.2 average.</em><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button></div>`
                     document.getElementById("application").innerHTML=html;
                 } else {
-                    var html=`<p class="class">IT 7113 Data Visualization <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">IT 6713 Business Intelligence <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">IT 6863 IT Database Security & Auditing <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+=`<p class="class">CYBR 7100 Secure Application Development <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
-                    html+= `<br><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button>`
+                    var html=`<div class="class">IT 7113 Data Visualization <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">IT 6713 Business Intelligence <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">IT 6863 IT Database Security & Auditing <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+=`<div class="class">CYBR 7100 Secure Application Development <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
+                    html+= `<div>Please note, the requirement for ${level}s is <em>above a 3.7 average.</em><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button></div>`
                     document.getElementById("application").innerHTML=html;
                 }
+
+                document.getElementById("result").innerHTML = ""; // Resets the 'result' div when the form selection changes
             }
 
+            // Evaluates avg GPA against criteria, which is set via the 'schooling' value
             function calculateAverage() {
                 var level = document.getElementById("schooling").value;
 
@@ -128,13 +133,40 @@ jstep163@students.kennesaw.edu
                     classNums = 4;
                 }
 
-                // array.forEach(element => {
+                let total = 0; // var to hold the total value of grades
+                let i = 1; // iterator for while loop
+
+                // loops through each Class# object and adds the value to the total
+                while (i <= classNums) {
                     
-                // });
+                    total += gradeConvert(document.getElementById(`Class${i}`).value);
+                    i ++;
+                }
 
-                html = `<p>Get your results here!</p>`;
+                avg = (total / classNums).toFixed(1) // Keeps decimal to one digit even when it's an even number
 
-                document.getElementById("result").innerHTML=html
+                if (avg < req) {
+                    html = `<hr><div>Sorry, your average is <span class="red">${avg}</span>, which doesn't meet our standards</div>`;
+                } else {
+                    html = `<hr><div>Congratulations, your average is <span class="green">${avg}</span>, which is enough! Please visit this<a href="https://www.google.com">Super Special link</a> to apply!</div>`;
+                }
+
+                document.getElementById("result").innerHTML=html // writes result to the innerHTML of 'result' div
+            }
+
+            // Takes str from drop-down menu and returns int for math 
+            function gradeConvert(letter){
+                if (letter == `A`) {
+                    return 4;
+                } else if (letter == `B`) {
+                    return 3;
+                } else if (letter == `C`) {
+                    return 2;
+                } else if (letter == `D`) {
+                    return 1;
+                } else {
+                    return 0;
+                }
             }
         </script>
     </body>

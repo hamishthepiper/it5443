@@ -224,3 +224,12 @@ tbody tr td {
 td:hover {
     background-color: var(--accent-green);
 }
+
+/* TODO: Style buttons */
+select.grade {
+    float: right;
+}
+
+button.avg {
+    float: right;
+}

@@ -48,13 +48,13 @@ jstep163@students.kennesaw.edu
                     <ul>
                         <li>Student must be currently enrolled at Kennesaw State University with no outstanding academic holds.</li>
                         <li>The following skills will be needed to fulfill the requirements:</li>
+                        <li>Student must be in good academic standing with a competitive average in the required courses.</li>
                         <ul>
                             <li>Statistical analysis</li>
                             <li>Python w/ SciPi framework</li>
                             <li>Collaborative coding within a distributed team</li>
-                            <li>Design code that securely handles data when transmitted and a rest.</li>
+                            <li>Design code that securely handles data when transmitted and at rest.</li>
                         </ul>
-                        <li>Student must be in good academic standing with a competitive average in the required courses.</li>
                     </ul> 
                 </p>
             </div>
@@ -76,18 +76,67 @@ jstep163@students.kennesaw.edu
                 <form>
                     <p>
                         <label for="schooling">Choose your level of schooling</label>
-                        <select id="schooling" name="level">
+                        <select id="schooling">
                             <option value="Undergraduate">Undergraduate</option>
                             <option value="Graduate">Graduate</option>
                         </select>
-                        <button type="submit">Submit selection</button>
+                        <button type="button" onclick="createApplication();">Submit selection</button>
                         <!-- Add event for submitting the selection to the proper JS file to generate the proper form -->
                     </p>
 
                 </form>
+
+                <!-- These are empty divs that are invisible until info is added to them -->
+                <div id="application"></div>
+
+                <div id="result"></div>
             </div>
 
         </div>
+
+        <script type="text/javascript">
+            function createApplication() {
+                var level = document.getElementById("schooling").value;
+
+                if (level == "Undergraduate") {
+                    var html=`<p class="class">CSE 3203 Mobile System Overview <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">IT 4213 Mobile Web Development <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">CYBR 3153 Database Systems <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">CYBR 4220 Server Systems Security <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">IT 4713 Business Intel Systems <select id="Class5" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+= `<br><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button>`
+                    document.getElementById("application").innerHTML=html;
+                } else {
+                    var html=`<p class="class">IT 7113 Data Visualization <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">IT 6713 Business Intelligence <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">IT 6863 IT Database Security & Auditing <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+=`<p class="class">CYBR 7100 Secure Application Development <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></p>`;
+                    html+= `<br><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button>`
+                    document.getElementById("application").innerHTML=html;
+                }
+            }
+
+            function calculateAverage() {
+                var level = document.getElementById("schooling").value;
+
+                // Sets variables for iteration and determining success or failure
+                if (level == "Undergraduate") {
+                    req = 3.2;
+                    classNums = 5;
+                } else {
+                    req = 3.7;
+                    classNums = 4;
+                }
+
+                // array.forEach(element => {
+                    
+                // });
+
+                html = `<p>Get your results here!</p>`;
+
+                document.getElementById("result").innerHTML=html
+            }
+        </script>
     </body>
 
     <!--Footer, standard across all pages-->

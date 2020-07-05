@@ -13,12 +13,12 @@ jstep163@students.kennesaw.edu
             <title>Center for Applied Research in Information Technology</title>
             <link rel="stylesheet" href="styles.css">
     </head>
-    <div class="header-wrapper">
-        <?php include '/header.php' ?>
-        <script src='setheader.js'></script>
-    </div>  
     
     <body>
+        <div class="header-wrapper">
+            <?php include('header.php');?>
+            <script src='setheader.js'></script>
+        </div>  
     <!--End standard page header and nav bar; Begin page content-->
         <div class="body-wrapper">
             <div class="section-title">

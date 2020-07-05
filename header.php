@@ -1,10 +1,10 @@
 <?php
-$text <<< 'EOL'
+$text = <<< 'EOL'
 <div class="navbar"> 
-<a id="index" href="index.html">Home</a>
-<a id="about" href="about.html">About</a>
-<a id="resources" href="resources.html">Resources</a>
-<a id="apply" href="apply.html">Apply!</a>
+<a id="index" href="index.php">Home</a>
+<a id="about" href="about.php">About</a>
+<a id="resources" href="resources.php">Resources</a>
+<a id="apply" href="apply.php">Apply!</a>
 </div> 
 
 <div class="header-title">

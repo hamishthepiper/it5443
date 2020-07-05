@@ -1,6 +1,6 @@
 
 //Sets the current active window dynamically
-var re = /\/(\w+)\.html$/;
+var re = /\/(\w+)\.php$/;
 let page = re.exec(window.location.pathname)
 
 if (!page) { 

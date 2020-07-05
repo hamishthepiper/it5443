@@ -16,23 +16,8 @@ update: Was working, now broken again...
     </head>
     <body>
         <div class="header-wrapper">
-            
-            <div class="navbar"> <!--https://www.w3schools.com/howto/howto_js_topnav.asp-->
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resources.html">Resources</a>
-                <a class="active" href="apply.html">Apply!</a>
-            </div> 
-
-
-            <div class="header-title">
-                Center for Applied Research in Information Technology
-            </div>
-
-            <a href="https://ccse.kennesaw.edu/it" target="_blank">
-                <img class="header-logo" src="images/navbar_logo.png">
-            </a>
-
+            <?php include('header.php');?>
+            <script src='setheader.js'></script>
         </div>  
 
 <!--End standard page header and nav bar; Begin page content-->

@@ -15,7 +15,7 @@ jstep163@students.kennesaw.edu
     </head>
     <body>
         <div class="navbar"> <!--https://www.w3schools.com/howto/howto_js_topnav.asp-->
-            <a id="home" href="index.html">Home</a>
+            <a id="index" href="index.html">Home</a>
             <a id="about" href="about.html">About</a>
             <a id="resources" href="resources.html">Resources</a>
             <a id="apply" href="apply.html">Apply!</a>
@@ -30,15 +30,16 @@ jstep163@students.kennesaw.edu
         </a>
         <script>
             //Sets the current active window dynamically
-            var re = /\/(\w+)\.html/;
-            var page = re.exec(window.location.pathname)
-            console.log(page[1])
-            if (!page) {
-                tpage = home
+            var re = /\/(\w+)\.html$/;
+            let page = re.exec(window.location.pathname)
+
+            if (!page) { 
+                document.getElementById(`index`).classList.add("active");
             } else {
-                tpage = page[1]
+                document.getElementById(page[1]).classList.add("active");
             }
-            document.getElementById(`${tpage}`).classList.add("active");
+            
+            
         </script>
 
         </div>  

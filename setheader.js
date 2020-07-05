@@ -1,4 +1,3 @@
-
 //Sets the current active window dynamically
 var re = /\/(\w+)\.php$/;
 let page = re.exec(window.location.pathname)

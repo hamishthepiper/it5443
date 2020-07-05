@@ -16,8 +16,8 @@ jstep163@students.kennesaw.edu
     
     <body>
         <div class="header-wrapper">
-            <?php include 'header.php';?>
-            <script src='setheader.js'></script>
+            <?php include 'includes/header.php';?>
+            <script src='scripts/setheader.js'></script>
         </div>  
     <!--End standard page header and nav bar; Begin page content-->
         <div class="body-wrapper">
@@ -59,19 +59,7 @@ jstep163@students.kennesaw.edu
 
     <!--Footer, standard across all pages-->
     <div class="footer">
-        <hr>
-        <div>
-            <a href="https://kennesaw.edu" target="_blank"><u>Kennesaw State University</u></a><br>
-            1000 Chastain Road<br>
-            Kennesaw, GA 30144<br>
-            Phone: 470-578-6000 <br>
-            <br>
-        </div>
-
-        <p>
-            This is a website which was designed to track progress and showcase skills
-            learned in the <a href="http://it5443.azurewebsites.net/" target="_blank">KSU IT5442 Web Development</a> class for Summer 2020.
-        </p>
+        <?php include 'includes/footer.php';?>
         
     </div>
 </html>

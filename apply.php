@@ -60,14 +60,13 @@ update: Was working, now broken again...
                 </div>
                 <hr>
                 <form>
-                    <p>
-                        <label for="schooling">Choose your level of schooling</label>
-                        <select id="schooling">
-                            <option value="Undergraduate">Undergraduate</option>
-                            <option value="Graduate">Graduate</option>
-                        </select>
+                    <p>Choose your level of schooling
+                        <!--autocomplete=off is necessary to keep the value of the checkbox from persisting-->
+                        <input type='radio' name='schooling' id='Undergraduate'  autocomplete='off'>
+                            <label for='Undergraduate' checked>Undergraduate</label>
+                        <input type='radio' name='schooling' id='Graduate' autocomplete="off">
+                            <label for='Graduate'>Graduate</label>
                         <button type="button" onclick="createApplication();">Submit selection</button>
-                        <!-- Add event for submitting the selection to the proper JS file to generate the proper form -->
                     </p>
 
                 </form>
@@ -84,21 +83,20 @@ update: Was working, now broken again...
 
             // generates different form based on schooling selection and writes to 'application' div innerHTML
             function createApplication() {
-                var level = document.getElementById("schooling").value;
 
-                if (level == "Undergraduate") {
+                if (document.getElementById('Undergraduate').checked) {
                     var html=`<div class="class">CYBR 3153 Database Systems <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">CSE 3203 Mobile System Overview <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">IT 4213 Mobile Web Development <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">CYBR 4220 Server Systems Security <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">IT 4713 Business Intel Systems <select id="Class5" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
-                    html+= `<div>Please note, the requirement for ${level}s is <em>above a 3.2 average.</em><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button></div>`
-                } else {
+                    html+= `<div>Please note, the requirement for Undergrads is <em>above a 3.2 average.</em><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button></div>`
+                } else { //This is OK b/c there's only two radio options
                     var html=`<div class="class">IT 6713 Business Intelligence <select id="Class1" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">IT 6863 IT Database Security & Auditing <select id="Class2" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">CYBR 7100 Secure Application Development <select id="Class3" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
                     html+=`<div class="class">IT 7113 Data Visualization <select id="Class4" class="grade"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="F">F</option></select></div>`;
-                    html+= `<div>Please note, the requirement for ${level}s is <em>above a 3.7 average.</em><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button></div>`
+                    html+= `<div>Please note, the requirement for Graduates is <em>above a 3.7 average.</em><button type="button" class="avg" onclick="calculateAverage();">Evaluate</button></div>`
                 }
 
                 document.getElementById("application").innerHTML=html; // Populates the application div with the correct form info

@@ -16,7 +16,7 @@ update: Was working, now broken again...
     </head>
     <body>
         <div class="header-wrapper">
-            <?php include('header.php');?>
+            <?php include 'header.php';?>
             <script src='setheader.js'></script>
         </div>  
 

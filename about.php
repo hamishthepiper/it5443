@@ -15,7 +15,7 @@ jstep163@students.kennesaw.edu
     </head>
     <body>
         <div class="header-wrapper">
-            <?php include('header.php');?>
+            <?php include 'header.php';?>
             <script src='setheader.js'></script>
         </div>  
 

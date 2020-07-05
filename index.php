@@ -16,7 +16,7 @@ jstep163@students.kennesaw.edu
     
     <body>
         <div class="header-wrapper">
-            <?php include('header.php');?>
+            <?php include 'header.php';?>
             <script src='setheader.js'></script>
         </div>  
     <!--End standard page header and nav bar; Begin page content-->

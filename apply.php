@@ -133,7 +133,7 @@ update: Was working, now broken again...
                 if (avg < req) {
                     html = `<hr><div>Sorry, your average is <span class="red">${avg}</span>, which doesn't meet our standards</div>`;
                 } else {
-                    html = `<hr><div>Congratulations, your average is <span class="green">${avg}</span>, which is enough! Please visit this <a href="https://www.google.com">Super Special link</a> to apply!</div>`;
+                    html = `<hr><div>Congratulations, your average is <span class="green">${avg}</span>, which is enough! Please visit this <a href="submit.php">Super Special link</a> to apply!</div>`;
                 }
 
                 document.getElementById("result").innerHTML=html // writes result to the innerHTML of 'result' div

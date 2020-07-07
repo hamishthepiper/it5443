@@ -38,10 +38,10 @@ update: Was working, now broken again...
 
                         <p>
                             <label for='fname'>First name: </label>
-                            <input type="text" name="fname" id="fname" required>
+                            <input type="text" name="fname" id="fname" placeholder="No numbers allowed" required pattern="^[a-zA-Z ,.'-]+$">
 
                             <label for='lname'>Last name: </label>
-                            <input type="text" name="lname" id="lname" required>
+                            <input type="text" name="lname" id="lname" placeholder="No numbers allowed" required pattern="^[a-zA-Z ,.'-]+$">
                         </p>
 
                         <p>
@@ -86,8 +86,8 @@ update: Was working, now broken again...
                     </div>
 
                     <div>
-                        <label for="website">Leave a link to an example of your work (Personal website, Github, etc):</label>
-                        <input type="url" name='website' id="website" placeholder="http(s)://example.com">
+                        <label for="website">Leave a link to an example of your work (Github or GitLab):</label>
+                        <input type="url" name='website' id="website" placeholder="http(s)://" pattern='^http(s)?:\/\/git(hub|lab)\.com\/[\w-_]+'>
                     </div>
 
                     <div>

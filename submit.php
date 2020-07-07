@@ -17,7 +17,6 @@ update: Was working, now broken again...
     <body>
         <div class="header-wrapper">
             <?php include 'includes/header.php' ;?>
-            <script src='scripts/setheader.js'></script>
         </div>  
 
         <div class="body-wrapper">
@@ -37,18 +36,22 @@ update: Was working, now broken again...
                             <h4>Contact Information <em>(All fields are required in this section)</em></h4>
                         </p>
 
-                        <label for='fname'>First name: </label>
-                        <input type="text" name="fname" id="fname" required>
+                        <p>
+                            <label for='fname'>First name: </label>
+                            <input type="text" name="fname" id="fname" required>
 
-                        <label for='lname'>Last name: </label>
-                        <input type="text" name="lname" id="lname" required>
+                            <label for='lname'>Last name: </label>
+                            <input type="text" name="lname" id="lname" required>
+                        </p>
 
-                        <label for='phone'>Phone number: </label>
-                        <input type="tel" name="phone" id="phone" placeholder="###-###-####" required pattern="\d{3}-\d{3}-\d{4}">
+                        <p>
+                            <label for='phone'>Phone number: </label>
+                            <input type="tel" name="phone" id="phone" placeholder="###-###-####" required pattern="\d{3}-\d{3}-\d{4}">
 
-                        <label for='email'>Email address: </label>
-                        <input type="email" name="email" id="email" placeholder="text@example.com" required pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$">
-                        <!--https://regexlib.com/REDetails.aspx?regexp_id=26-->
+                            <label for='email'>Email address: </label>
+                            <input type="email" name="email" id="email" placeholder="text@example.com" required pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$">
+                            <!--https://regexlib.com/REDetails.aspx?regexp_id=26-->
+                        </p>
 
                     </div>
                     <hr>
@@ -56,22 +59,22 @@ update: Was working, now broken again...
                     <div>
                         <label for="employed">Are you currently obligated to another employer for more than 35 hours/week? </label>
                         <!--autocomplete=off is necessary to keep the value of the checkbox from persisting in Firefox-->
-                        <input type='radio' name='employed' id='empl_y'  autocomplete='off' >
+                        <input type='radio' name='employed' id='empl_y' value='Yes' autocomplete='off' >
                             <label for='empl_y' checked>Yes</label>
-                        <input type='radio' name='employed' id='empl_n' autocomplete="off">
+                        <input type='radio' name='employed' id='empl_n' value='No' autocomplete="off">
                             <label for='empl_n'>No</label>
 
                     </div>
 
                     <div>
                         <label for="startdate">What's the earliest you could start?</label>
-                        <input type="date" name="datetime" id="startdate" min=<?php echo date('Y-m-d'); ?>>
+                        <input type="date" name="startdate" id="startdate" min=<?php echo date('Y-m-d'); ?>>
                     </div>
 
                     <div>
                         <label for="os_choice">What's the Operating System you're most comfortable with?</label>
-                        <select id="os_choice">
-                            <option value=""></option>
+                        <select id="os_choice" name='os_choice'>
+                            <option value="NULL"></option>
                             <option value="Windows">Windows</option>
                             <option value="MacOS">MacOS</option>
                             <option value="Linux">Linux</option>
@@ -79,12 +82,12 @@ update: Was working, now broken again...
                     </div>
 
                     <div>
-                        Check here if you will require us to supply you with a laptop <input type="checkbox" id="need_laptop">
+                        Check here if you will require us to supply you with a laptop <input type="checkbox" name="need_laptop" id="need_laptop">
                     </div>
 
                     <div>
-                        <label for="link">Leave a link to an example of your work (Personal website, Github, etc):</label>
-                        <input type="url" id="link" placeholder="http(s)://example.com">
+                        <label for="website">Leave a link to an example of your work (Personal website, Github, etc):</label>
+                        <input type="url" name='website' id="website" placeholder="http(s)://example.com">
                     </div>
 
                     <div>

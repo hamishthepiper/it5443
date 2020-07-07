@@ -70,7 +70,7 @@ function test_input($data) {
                 ?><br><br>
 
                 Start Date: <?php 
-                    if ( isset($_POST["startdate"]) ) {
+                    if ( $startdate != "") {
                         echo $startdate;
                     } else {
                         echo 'Answer left blank';
